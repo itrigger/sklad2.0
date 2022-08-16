@@ -1,5 +1,9 @@
-import "@fontsource/dm-sans"
-import "@fontsource/dm-sans/500.css"
-import "@fontsource/dm-sans/700.css"
-import "@fontsource/dm-mono"
-import "@fontsource/dm-mono/500.css"
+/**
+ * Implement Gatsby's Browser APIs in this file.
+ *
+ * See: https://www.gatsbyjs.com/docs/browser-apis/
+ */
+
+// You can delete this file if you're not using it
+import RootWrapper from "./src/components/root-wrapper"
+export const wrapPageElement = RootWrapper

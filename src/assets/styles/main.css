@@ -1,0 +1,251 @@
+body {
+  background-color: #e3f2fd;
+}
+
+.error {
+  color: red;
+}
+
+h1 {
+  margin-bottom: 35px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.logo-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 100px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.content {
+  min-height: calc(100vh - 110px);
+}
+
+.header {
+  border-radius: 0 0 10px 10px;
+  padding: 10px 0;
+  background: #fff;
+}
+.header .MuiIconButton-root {
+  text-transform: uppercase;
+}
+
+.footer {
+  padding-top: 20px;
+  height: 70px;
+}
+
+.header .css-azeo8y-MuiAvatar-root {
+  background: #5d5d5d;
+}
+
+.auth-container {
+  background: aliceblue;
+}
+
+.auth-block {
+  text-align: center;
+}
+.auth-block button {
+  width: calc(100% - 8px) !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.white-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.top-menu {
+  display: flex;
+  vertical-align: center;
+  width: 100%;
+  margin-left: 40px;
+}
+.top-menu .MuiTypography-body1 {
+  margin-right: 20px;
+  align-items: center;
+}
+
+.top-btn-wrapper a:hover {
+  color: #fff;
+}
+
+.orders-sklad {
+  margin-top: 30px;
+}
+
+.like-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #5d5d5d;
+  border-radius: 2px;
+}
+
+.print-aria {
+  padding: 40px 25px 25px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.print-aria h4 {
+  text-align: center;
+}
+
+.print-btn-w {
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.d_f {
+  display: flex;
+}
+
+.ico {
+  margin-right: 10px;
+}
+
+.ico-wt {
+  width: 25px;
+  height: 25px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI1IDI1Ij48Y2lyY2xlIGN4PSIxMi41IiBjeT0iMTIuNSIgcj0iMTIuNSIgZmlsbD0iIzJDQjc0MiIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Im03IDE4IDEuMDMyLTMuMDk2YTUuODk3IDUuODk3IDAgMSAxIDIuMzI4IDIuMjEyTDcgMThaIi8+PHBhdGggZmlsbD0iIzJDQjc0MiIgZD0iTTE2Ljg2NSAxMy44NTljLS4yNzItLjUxNS0xLjI3Ni0xLjEwMy0xLjI3Ni0xLjEwMy0uMjI3LS4xMy0uNTAyLS4xNDQtLjYzMS4wODcgMCAwLS4zMjYuMzkxLS40MS40NDctLjM3OC4yNTctLjczLjI0Ny0xLjA4NC0uMTA3bC0uODI0LS44MjQtLjgyMy0uODIzYy0uMzU1LS4zNTUtLjM2NC0uNzA2LS4xMDgtMS4wODUuMDU2LS4wODMuNDQ4LS40MS40NDgtLjQxLjIzLS4xMjkuMjE2LS40MDMuMDg3LS42MyAwIDAtLjU4OS0xLjAwNC0xLjEwMy0xLjI3NmEuNTY0LjU2NCAwIDAgMC0uNjYzLjFsLS4zNjQuMzYzYy0xLjE1NCAxLjE1NC0uNTg1IDIuNDU3LjU2OCAzLjYxbDEuMDU1IDEuMDU1IDEuMDU0IDEuMDU1YzEuMTU0IDEuMTUzIDIuNDU3IDEuNzIyIDMuNjEuNTY4bC4zNjUtLjM2NGEuNTY1LjU2NSAwIDAgMCAuMS0uNjYzWiIvPjwvc3ZnPg==) 0 0 no-repeat;
+}
+
+.tooltip {
+  opacity: 1 !important;
+}
+.tooltip .tooltip-text {
+  font-size: 18px;
+}
+.tooltip .calendarName {
+  display: none;
+}
+.tooltip .calendarName + a {
+  display: none;
+}
+
+.table tr.active td {
+  background: aquamarine;
+}
+
+.bc-wrapper {
+  padding-top: 12px;
+  margin-bottom: 25px;
+  font-size: 12px;
+}
+
+.placeholder {
+  border-radius: 4px;
+}
+
+.mainpage-section {
+  margin-top: 5px !important;
+}
+
+.mainpage-post {
+  margin-bottom: 10px;
+}
+
+.post {
+  margin-bottom: 30px;
+}
+.post--title {
+  margin-bottom: 20px;
+}
+.post--image {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.post--content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gFrame {
+  width: 100%;
+  height: calc(100vh - 400px);
+}
+
+.date {
+  font-size: 12px;
+  color: #5d5d5d;
+}
+
+.order--item {
+  margin-bottom: 30px;
+}
+.order--item button {
+  margin-bottom: 20px;
+}
+
+.cats {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cats--item {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.table-tr.active td {
+  background: #a6ffe1;
+}
+
+.mobile-menu, .mobile-menu-wrapper {
+  display: none;
+}
+
+.top-menu-wrapper {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+
+.header .MuiBadge-badge {
+  top: 9px !important;
+  right: 4px !important;
+}
+
+@media (max-width: 899px) {
+  .mobile-menu, .mobile-menu-wrapper {
+    display: flex;
+  }
+
+  .top-menu {
+    display: none !important;
+  }
+
+  .logo {
+    width: 70px;
+  }
+
+  .header {
+    padding-bottom: 0;
+  }
+
+  .product-table-tr .product-row--td-last {
+    width: 188px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .product-table-tr .product-row--form {
+    width: 188px;
+    margin: 0;
+  }
+  .product-table-tr .product-row--input-w--button {
+    min-width: 44px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

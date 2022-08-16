@@ -5,7 +5,7 @@ export default function Head({ title, description, image }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang: "en-us",
+        lang: "ru-ru",
       }}
     >
       <meta charSet="utf-8" />
