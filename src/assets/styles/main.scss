@@ -83,9 +83,10 @@ h1{
 }
 .print-aria{
   padding: 40px 25px 25px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 660px;
+  margin: 30px auto 20px;
+  border-radius: 2px;
+  box-shadow: 1px 0 10px rgba(#000,.2);
   h4{
     text-align: center;
   }
@@ -194,7 +195,13 @@ h1{
   }
 }
 
-
+.zebra{
+  tr:nth-child(2n){
+    td{
+      background: aliceblue;
+    }
+  }
+}
 
 .mobile-menu, .mobile-menu-wrapper{
   display: none;
@@ -239,5 +246,11 @@ h1{
         min-width: 44px;
       }
     }
+  }
+}
+
+@media print {
+  .hidden{
+    display: none !important;
   }
 }

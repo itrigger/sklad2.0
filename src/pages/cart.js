@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import Layout from "../components/layout";
 import { useMutation } from "@apollo/client";
@@ -12,8 +12,8 @@ import {
   Grid, Table,
   TableBody,
   TableCell,
-  TableContainer,
-  TableRow,
+  TableContainer, TableFooter,
+  TableRow, TextField,
   Typography
 } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
@@ -25,13 +25,14 @@ import dateFormat from "dateformat";
 const Cart = () => {
   const [cartItems, setCartItem] = useContext(CartContext);
   const value = React.useContext(CartContext);
-
+  const [note, setNote] = useState("")
 
   //болванка заказа
   const body = {
     clientMutationId: v4(),
     customerId: getUser().id,
     paymentMethod: "bacs",
+    customerNote: note !== "" ? note : null,
     isPaid: false,
     billing: {
       firstName: getUser().name,
@@ -73,15 +74,18 @@ const Cart = () => {
   const curDate = dateFormat(new Date(), "dd.mm HH.MM.ss");
   let msg = `${getUser().name}%0A${curDate}%0A`;
   value[0] && value[0].forEach(item => msg+=`${item.name}: ${item.quantity} ${item.measures}%0A`);
+  msg += `%0A${note}`
 
   Telegram.setToken(TELEGRAM_TOKEN);
-  Telegram.setRecipient(CHAT_ID);
   Telegram.setMessage(msg);
 
   const sendOrderHandler = () => {
     order().then(r => {
         if(r.data.createOrder.order.status === 'PENDING'){
-          Telegram.send()
+          CHAT_ID.forEach((item)=>{
+            Telegram.setRecipient(item);
+            Telegram.send()
+          })
           setCartItem([])
         }
       }
@@ -110,7 +114,7 @@ const Cart = () => {
             {error ? (
               <Alert color="error">{JSON.stringify(error)}</Alert>
             ) : null}
-            {data && data.createOrder.order.status === 'PROCESSING' ? (
+            {data && data.createOrder.order.status === 'PENDING' ? (
               <Alert color="success">
                 Ваш заказ успешно отправлен!
               </Alert>
@@ -130,6 +134,30 @@ const Cart = () => {
                               </TableRow>
                             ))}
                           </TableBody>
+                          <TableFooter>
+                            <TableRow>
+                              <TableCell colSpan={2}>
+                                <Box
+                                  component="form"
+                                  sx={{
+                                    '& .MuiTextField-root': { m: 1, width: '100%' },
+                                  }}
+                                  noValidate
+                                  autoComplete="off"
+                                >
+                                  <TextField
+                                    id="outlined-multiline-static"
+                                    label="Комментарий"
+                                    multiline
+                                    rows={4}
+                                    cols={12}
+                                    value={note}
+                                    onChange={(e)=>setNote(e.target.value)}
+                                  />
+                                </Box>
+                              </TableCell>
+                            </TableRow>
+                          </TableFooter>
                         </Table>
                       </TableContainer>
                       <LoadingButton

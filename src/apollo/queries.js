@@ -144,7 +144,7 @@ export const GET_MY_ORDERS = gql`
             orders(first: 10) {
                 nodes {
                     date
-                    lineItems {
+                    lineItems(last: 100) {
                         nodes {
                             product {
                                 node {
@@ -163,15 +163,16 @@ export const GET_MY_ORDERS = gql`
         }
     }
 `
+//{before: {day: $day2, month: $month2}, after: {day: $day1, month: $month1}}
 
-export const GET_ALL_ORDERS = gql`
-    query getAllOrders($day: Int = 5, $month: Int = 8) {
-        orders(where: {dateQuery: {month: $month, day: $day}}) {
+export const GET_ALL_ORDERS_RANGE = gql`
+    query getAllOrdersRange($day1: Int, $month1: Int, $day2: Int, $month2: Int) {
+        orders(where: {dateQuery: {before: {day: $day2, month: $month2}, after: {day: $day1, month: $month1}}} last: 100) {
             nodes {
                 date
                 databaseId
                 status
-                lineItems {
+                lineItems(last: 100) {
                     nodes {
                         databaseId
                         product {
@@ -191,6 +192,75 @@ export const GET_ALL_ORDERS = gql`
                     firstName
                     lastName
                 }
+                customerNote
+            }
+        }
+    }
+`
+
+
+export const GET_ALL_ORDERS = gql`
+    query getAllOrders($day: Int = 5, $month: Int = 8) {
+        orders(where: {dateQuery: {month: $month, day: $day}}) {
+            nodes {
+                date
+                databaseId
+                status
+                lineItems(last: 100) {
+                    nodes {
+                        databaseId
+                        product {
+                            node {
+                                name
+                                productsacf {
+                                    measures
+                                    packs
+                                }
+                                databaseId
+                            }
+                        }
+                        quantity
+                    }
+                }
+                customer {
+                    firstName
+                    lastName
+                }
+                customerNote
+            }
+        }
+    }
+`
+
+
+export const GET_ALL_NEW_ORDERS = gql`
+    query getAllNewOrders {
+        orders(where: {statuses: PENDING}) {
+            nodes {
+                date
+                databaseId
+                status
+                lineItems(last: 100) {
+                    nodes {
+                        databaseId
+                        product {
+                            node {
+                                name
+                                productsacf {
+                                    measures
+                                    packs
+                                }
+                                databaseId
+                            }
+                        }
+                        quantity
+                    }
+                }
+                customer {
+                    firstName
+                    lastName
+                }
+                customerNote
             }
         }
     }

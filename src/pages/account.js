@@ -37,7 +37,7 @@ const Account = () => {
         <title>
           Мой аккаунт
         </title>
-        <link rel="canonical" href="https://sklad2.sushihiro.kz" />
+        <link rel="canonical" href="https://in.sushihiro.org" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

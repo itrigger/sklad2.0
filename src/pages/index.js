@@ -6,11 +6,12 @@ import { gapi } from "gapi-script";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_ADVS, GET_ALL_NEWS } from "../apollo/queries";
 import dateFormat from "dateformat";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import { Box, Button, CircularProgress, Grid } from "@mui/material";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import ArticleIcon from "@mui/icons-material/Article";
+import { AUTH_TOKEN } from "../constants";
 
 export default function Homepage() {
   const [events, setEvents] = useState([]);
@@ -29,6 +30,11 @@ export default function Homepage() {
   const date = new Date();
   const currentDay = date.toISOString();
 
+  const authToken = typeof window !== "undefined" && localStorage.getItem(AUTH_TOKEN);
+
+  if (!authToken && typeof window !== "undefined") {
+    navigate("/login");
+  }
 
   useEffect(() => {
     if (dataNews) {

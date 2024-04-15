@@ -73,7 +73,7 @@ export const afterware = new ApolloLink((operation, forward) => {
 
 export const client = new ApolloClient({
   link: middleware.concat(afterware.concat(createHttpLink({
-    uri: "https://api.sushihiro.kz/graphql",
+    uri: "https://api.sushihiro.org/graphql",
     fetch: fetch
   }))),
   cache: new InMemoryCache()

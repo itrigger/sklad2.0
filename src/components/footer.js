@@ -34,7 +34,7 @@ export default function Footer() {
         </Grid>
       </Grid>
       <Box sx={{fontSize: "11px", textAlign: "center"}}>
-        <Button sx={{fontSize: "11px"}} onClick={handleClickOpen()}>Версия 1.0</Button>
+        <Button sx={{fontSize: "11px"}} onClick={handleClickOpen()}>Версия 1.6.1</Button>
       </Box>
       <SpeedDial
         ariaLabel="SpeedDial basic example"
@@ -68,6 +68,24 @@ export default function Footer() {
             id="scroll-dialog-description"
             tabIndex={-1}
           >
+            {/* ToDo 1) в общей заявке сделать возможность выделить некоторые позиции и печатать только их
+                ToDo 2) в печатаемой заявке уменьшить отступы в таблице
+                ToDo 3) в общей заявке дать возможность редактировать кол-во
+            */}
+            <Typography variant="subtitle1" gutterBottom component="div">1.6</Typography>
+            <Typography variant="body2" gutterBottom>- Добавлена возможность выбрать несколько дней на странице Все заявки для склада</Typography>
+            <Typography variant="body2" gutterBottom>- Уменьшены отступы в заявках и добавлена раскраска "зебра"</Typography>
+            <Typography variant="subtitle1" gutterBottom component="div">1.5</Typography>
+            <Typography variant="body2" gutterBottom>- Добавлена возможность оставлять комментарий к заявке</Typography>
+            <Typography variant="body2" gutterBottom>- Уменьшены отступы в печатаемой заявке</Typography>
+            <Typography variant="subtitle1" gutterBottom component="div">1.4</Typography>
+            <Typography variant="body2" gutterBottom>- [FIX] Сообщение об успешной отправки заявки корректно отображается</Typography>
+            <Typography variant="subtitle1" gutterBottom component="div">1.3</Typography>
+            <Typography variant="body2" gutterBottom>- На странице списка всех заказов для склада сделан вывод всех новых заявок</Typography>
+            <Typography variant="body2" gutterBottom>- На странице списка всех заказов добавлена кнопка "Показать все новые заказы"</Typography>
+            <Typography variant="body2" gutterBottom>- Убрано кэширование списка заявок</Typography>
+            <Typography variant="subtitle1" gutterBottom component="div">1.2</Typography>
+            <Typography variant="body2" gutterBottom>- [FIX] Исправлено отображение только 10 позиций в заявках</Typography>
             <Typography variant="subtitle1" gutterBottom component="div">1.1</Typography>
             <Typography variant="body2" gutterBottom>- Мобильная версия сайта</Typography>
             <Typography variant="body2" gutterBottom>- Уведомление звуковое и визуальное, а также автоматическое отображение новых заявок за текущий день пользователя "Склад"</Typography>
@@ -78,6 +96,7 @@ export default function Footer() {
             <Typography variant="body2" gutterBottom>- Список всех заявок для пользователя "Склад"</Typography>
             <Typography variant="body2" gutterBottom>- Просмотр, печать, выгрузка заявки конкретного отдела пользователем "Склад"</Typography>
             <Typography variant="body2" gutterBottom>- Формирование и печать общей заявки пользователем "Склад"</Typography>
+            <Typography variant="body2" gutterBottom>- Отправка заявок в телеграм бот</Typography>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
